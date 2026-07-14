@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Nurzhan! 🎉</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+    overflow:hidden;
+}
+
+.card{
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    color:white;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    animation:fadeIn 1.5s;
+    max-width:600px;
+}
+
+h1{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+p{
+    font-size:20px;
+    line-height:1.7;
+}
+
+button{
+    margin-top:30px;
+    padding:14px 30px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#ff4d6d;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#hidden{
+    display:none;
+    margin-top:25px;
+    font-size:22px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<h1>🎂 Happy Birthday! 🎂</h1>
+
+<h2>Dear Nurzhan ❤️</h2>
+
+<p>
+Wishing you happiness, health, success, and endless smiles.<br>
+May all your dreams come true and every day bring you joy.<br><br>
+
+Have an amazing birthday! 🎉
+</p>
+
+<button onclick="surprise()">Open Surprise 🎁</button>
+
+<div id="hidden">
+💖 You deserve all the happiness in the world!<br>
+Happy Birthday, Nurzhan! 🎂🎉❤️
+</div>
+
+</div>
+
+<script>
+
+function surprise(){
+
+document.getElementById("hidden").style.display="block";
+
+for(let i=0;i<100;i++){
+
+let e=document.createElement("div");
+
+e.innerHTML=["🎉","🎊","🎈","✨","💖","🎂"][Math.floor(Math.random()*6)];
+
+e.style.position="fixed";
+e.style.left=Math.random()*100+"vw";
+e.style.top="-30px";
+e.style.fontSize=(20+Math.random()*25)+"px";
+e.style.transition="4s linear";
+
+document.body.appendChild(e);
+
+setTimeout(()=>{
+e.style.transform=`translateY(${window.innerHeight+50}px) rotate(${Math.random()*720}deg)`;
+},50);
+
+setTimeout(()=>{
+e.remove();
+},4200);
+
+}
+
+}
+
+</script>
+
+</body>
+  </html>
